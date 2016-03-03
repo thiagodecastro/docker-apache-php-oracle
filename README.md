@@ -6,7 +6,7 @@ Docker Image built on Debian, with Apache2, PHP5, OCI8 extension and Oracle Inst
     cd docker-apache-php-oracle
     docker build -t thomasbisignani/docker-apache-php-oracle .
 
- ## Or pull the image from Docker Hub :
+## Or pull the image from Docker Hub :
     docker pull thomasbisignani/docker-apache-php-oracle
 
 ## Run the sample project :
