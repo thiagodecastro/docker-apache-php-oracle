@@ -41,7 +41,7 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 
 EXPOSE 80
 
-# Update the default Apache2
+# Update the default Apache2 config file
 ADD apache2-config.conf /etc/apache2/sites-enabled/000-default.conf
 
 # Run Apache in Foreground
