@@ -18,15 +18,14 @@ RUN dpkg -i /tmp/oracle-instantclient12.1-sqlplus_12.1.0.2.0-2_amd64.deb
 RUN rm -rf /tmp/oracle-instantclient12.1-*.deb
 
 # Config the Oracle PATH
-RUN export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/
-RUN export ORACLE_HOME=/usr/lib/oracle/12.1/client64/lib/
+ENV LD_LIBRARY_PATH /usr/lib/oracle/12.1/client64/lib/
+ENV ORACLE_HOME /usr/lib/oracle/12.1/client64/lib/
 
 # Install the OCI8 PHP extension
 RUN echo 'instantclient,/usr/lib/oracle/12.1/client64/lib' | pecl install -f oci8-2.0.8
 RUN echo "extension=oci8.so" > /etc/php5/apache2/conf.d/30-oci8.ini
 
 # Enable Apache2 modules
-RUN a2enmod php5
 RUN a2enmod rewrite
 
 # Set up the Apache2 environment variables
