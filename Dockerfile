@@ -5,7 +5,7 @@ MAINTAINER Thomas Bisignani <contact@thomasbisignani.com>
 RUN apt-get update
 RUN apt-get -y upgrade
 
-# Install Apache2 / PHP 5.6
+# Install Apache2 / PHP 5.6 & Co.
 RUN apt-get -y install apache2 php5 libapache2-mod-php5 php5-dev php-pear php5-curl curl libaio1
 
 # Install the Oracle Instant Client
@@ -17,7 +17,7 @@ RUN dpkg -i /tmp/oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
 RUN dpkg -i /tmp/oracle-instantclient12.1-sqlplus_12.1.0.2.0-2_amd64.deb
 RUN rm -rf /tmp/oracle-instantclient12.1-*.deb
 
-# Config the Oracle PATH
+# Set up the Oracle environment variables
 ENV LD_LIBRARY_PATH /usr/lib/oracle/12.1/client64/lib/
 ENV ORACLE_HOME /usr/lib/oracle/12.1/client64/lib/
 
